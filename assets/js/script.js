@@ -94,7 +94,7 @@ function calculateCorrectAnswer() {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`
     }
-
+}
 
 /**
  * Gets the current score from the dom and increments it by 1
