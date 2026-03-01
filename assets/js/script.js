@@ -16,6 +16,13 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
 
+    //To be able to submit answer by clicking Enter
+    document.getElementById("answer-box").addEventListener("keydown", function(event){
+        if (event.key === "Enter"){
+            checkAnswer();
+        }
+    })
+
     runGame("addition");
 
 })
@@ -26,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function(){
 */
 
 function runGame(gameType) {
+
+    document.getElementById("answer-box").value = ""; // makes sure the input box is empty for the new answer
+    document.getElementById("answer-box").focus(); //the cursor is in the input field
+
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
